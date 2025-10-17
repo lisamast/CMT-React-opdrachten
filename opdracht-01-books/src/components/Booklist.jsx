@@ -11,12 +11,15 @@ const BookList = () => {
  
 
     return (
-    <div>
+      <>
       <h2>Boeken</h2>
+    <section className='books-container'>
+      
       {books.map(book => (
         <Book title={book.title} img={book.img} auteur={book.auteur}/>
       ))}
-    </div>
+    </section>
+    </>
   );
 
     // return (
