@@ -1,6 +1,7 @@
 import { useState } from "react";
-import data from "./opdracht-04-menu/data.js"
-import Menu from "./Menu.jsx"
+import data from "../data.js";
+import MenuItem from "./MenuItem.jsx";
+
 
 const MenuList = () => {
     const [items, setItems] = useState(data);
@@ -8,9 +9,12 @@ const MenuList = () => {
     return (
         <section>
             <h1>Our Menu</h1>
-            <MenuList item ={items}/>
+
+            {items.map(item => (
+                <MenuItem img={item.img} title={item.title} category={item.category} price={item.price} description={item.desc} />
+            ))}
         </section>
     );
 }
- 
+
 export default MenuList;
